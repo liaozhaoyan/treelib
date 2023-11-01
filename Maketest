@@ -1,0 +1,16 @@
+LUA ?= lua5.1
+LUA_PC ?= lua5.1
+LUA_CFLAGS = $(shell pkg-config $(LUA_PC) --cflags)
+
+CFLAGS ?= -O3 -g
+
+all: test_tree
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $(LUA_CFLAGS) -o $@ $<
+
+test_tree: test_tree.o tree.o
+	$(CC) test_tree.o tree.o -o $@
+
+clean:
+	rm -f test *.o *.rock

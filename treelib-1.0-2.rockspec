@@ -1,5 +1,5 @@
 package = "treelib"
-version = "1.0-1"
+version = "1.0-2"
 source = {
     url = "git://github.com/liaozhaoyan/treelib",
 }
@@ -20,8 +20,6 @@ build = {
         ['treelib'] = {
             sources = {"treelib.c"},
         },
-        ['treewrap'] = {
-            sources = {"treewrap.lua"},
-        }
+        ['treewrap'] = "treewrap.lua",
     },
 }
